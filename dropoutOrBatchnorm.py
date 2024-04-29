@@ -32,9 +32,11 @@ x_valid = np.expand_dims(x_valid, axis=3)
 # Define the model architecture
 model = keras.Sequential([
     Flatten(input_shape=(28, 28, 1)),
-    #specially 300 neurons for visual demonstration
+    #Specially 300 neurons for visual demonstration
     Dense(300, activation='relu'),
+    #BatchNormalization, or dropout
     Dropout(0.8),
+    #BatchNormalization(),
     Dense(10, activation='softmax')
 ])
 
