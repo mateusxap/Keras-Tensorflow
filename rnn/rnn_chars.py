@@ -32,7 +32,7 @@ print(data.shape)
 model = Sequential()
 model.add(Input((inp_chars,
                  num_characters)))  # при тренировке в рекуррентные модели keras подается сразу вся последовательность, поэтому в input теперь два числа. 1-длина последовательности, 2-размер OHE
-model.add(SimpleRNN(128, activation='tanh'))  # рекуррентный слой на 500 нейронов
+model.add(SimpleRNN(128, activation='tanh'))  
 model.add(Dense(num_characters, activation='softmax'))
 model.summary()
 
@@ -50,7 +50,7 @@ def buildPhrase(inp_str, str_len=50):
         x = np.array(x)
         inp = x.reshape(1, inp_chars, num_characters)
 
-        pred = model.predict(inp)  # предсказываем OHE четвертого символа
+        pred = model.predict(inp)  
         d = tokenizer.index_word[pred.argmax(axis=1)[0]]  # получаем ответ в символьном представлении
 
         inp_str += d  # дописываем строку
