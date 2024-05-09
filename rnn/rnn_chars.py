@@ -22,7 +22,7 @@ print(tokenizer.word_index)
 
 inp_chars = 6
 data = tokenizer.texts_to_matrix(text)  # преобразуем исходный текст в массив OHE
-n = data.shape[0] - inp_chars  # так как мы предсказываем по трем символам - четвертый
+n = data.shape[0] - inp_chars 
 
 X = np.array([data[i:i + inp_chars, :] for i in range(n)])
 Y = data[inp_chars:]  # предсказание следующего символа
