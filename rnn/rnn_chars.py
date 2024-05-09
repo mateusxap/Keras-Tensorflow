@@ -58,5 +58,5 @@ def buildPhrase(inp_str, str_len=50):
     return inp_str
 
 
-res = buildPhrase("утренн")
+res = buildPhrase("cчасть")
 print(res)
