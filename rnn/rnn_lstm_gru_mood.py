@@ -3,7 +3,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import numpy as np
 import re
-from tensorflow.keras.layers import Dense, LSTM, Input, Dropout, Embedding
+from tensorflow.keras.layers import Dense, LSTM, GRU, Input, Dropout, Embedding
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
@@ -52,8 +52,10 @@ Y = Y[indeces]
 
 model = Sequential()
 model.add(Embedding(maxWordsCount, 128, input_length = max_text_len))
-model.add(LSTM(128, return_sequences=True))
-model.add(LSTM(64))
+# model.add(LSTM(128, return_sequences=True))
+# model.add(LSTM(64))
+model.add(GRU(128, return_sequences=True))
+model.add(GRU(64))
 model.add(Dense(2, activation='softmax'))
 model.summary()
 
