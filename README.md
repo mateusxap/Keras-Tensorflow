@@ -6,7 +6,7 @@ This repository contains a collection of my experiments with deep lear
   - **rnn directory:** Different RNN architectures (LSTM, GRU) for tasks like text generation and mood classification. This directory also includes experiments with word embedding techniques to represent text data as dense vectors
   - **Datasets:**
     - **train_data.txt:** Contains a collection of positive sentences.
-    - - **train_data_bad.txt:** Contains a collection of negative sentences. 
+    - **train_data_bad.txt:** Contains a collection of negative sentences. 
 - **Image Colorization:**
   - **colorization.py:** Experimenting with convolutional neural networks to colorize grayscale images.
 - **Style Transfer:**
